@@ -1,9 +1,16 @@
 # MUSICGAME
+ # Zine
+<img width="1304" height="1999" alt="zine png" src="https://github.com/user-attachments/assets/6ebfa892-7f9c-4048-9b82-7072d4d59bc7" />
 
 # Description
-The music game controller is supposed to be a portable version of the amazing experience you get in a rhythm game arcade. You can play any music with it, since its BPM is adjustable, so everyone can play their favorite song on it-AT HOME!
+The music game arcade is supposed to be a portable version of the amazing experience you get in a rhythm game arcade. You can play any music with it, since its BPM is adjustable, so everyone can play their favorite song on it-AT HOME!
+#Game Concept
 
 # Motivation
+I have always loved going to music arcades. They are colorful, fun and beautiful. Most importantly, I love rhythm games. This is why I wanted to make a rhythm game with the display being an arcade controller. Originally, my idea was to use slippers as the buttons. However after my friend showed me a design, I immediately thought that the arcade controller would be alot cooler and more fitting to the theme.
+There is one problem. I live in Germany and there is not a single music game arcade that I can go to and have fun with my friends. Another problem that I found was that you cant particularly choose your music. You always have to hope for songs that you like to appear magically.
+With this portable music arcade game I want to bring everyone who owns it the joy of arcade games at home. Everyone in Germany, anyone in any country. And no more gambling with songs as well. Since BPM and beat amount are adjustable, you can simply search up the bpm and beat amount of your song and start playing any song, no matter how niche it might be. 
+I hope this little device can light up the mood of anyone who feels a little down, just like music arcade lit me up with joy. 
 
 # Schematic
 The schematic is rather simple. The LED Matrix is powered by a Meanwell LRS-50-5, which delivers 5V and up to 10A, which is enough for the display. The Pico 2 can either be powered by the Meanwell or be connected to the computer. The only thing that is important is, that the computer needs to be connected to the Pico 2, to send over the data. However, it is also connected to the powersupply. For this reason, the Meannwell is connected to the VSYS pin of the Pico 2, with a shottkey diode in between. The Meanwell is connected to a power outlet with a cable.
@@ -25,7 +32,7 @@ There are screw holes for the display to be mounted onto the case. The case has 
 
 <img width="350" height="510" alt="Bildschirmfoto 2026-06-21 um 01 17 48" src="https://github.com/user-attachments/assets/0ef8c82b-f129-4b92-bc6a-b8e89a58db23" />
 
-The CAD model consists of two major parts. One being the main case and another backplate, that can be taken off. Inside you can place the power supply unit and the Pico 2. The backplate can be detached or assembled by pressed it into the main case or pulling it ou.
+The CAD model consists of two major parts. One being the main case and another backplate, that can be taken off. Inside you can place the power supply unit and the Pico 2. The backplate can be detached or assembled by pressed it into the main case or pulling it out.
 
 <img width="501" height="472" alt="Bildschirmfoto 2026-06-21 um 01 24 55" src="https://github.com/user-attachments/assets/92256e42-3843-4415-ae0f-18c9367f627f" />
 
@@ -33,6 +40,19 @@ The CAD model consists of two major parts. One being the main case and another b
 
 
 
+# Planning PowerPoint
+Fallout is my first hardware project ever and I am very grateful, because it has such a cool concept and community. This is why I wanted to dedicate myself more to the software and details of programming while understanding the connection and bridge that overlaps the worlds of hardware and software.
+This is a PowerPoint I made for myself to code my rhythm game. Since I am very inexperienced and I am doing a project like this for the first time, I decided to plan out the code and the matching hardware, before starting. This was one of the best decisions, because I did not choose to follow one of the tutorials. Maybe I should have, both have their pros and cons. At the end of the day however, I am glad that I chose the exploring route, since I have learned so much and I really did not expect to. 
+Inside the PowerPoint you can see that I started with the code and its components. For this I collected all the data from a very good youtube vide, explaining each component of a rhythm game, for example the metronome or the composer. 
+<img width="605" height="830" alt="image" src="https://github.com/user-attachments/assets/9d7b7d1d-5474-40ed-8f4b-eb891479f7ac" />
+<img width="613" height="800" alt="image" src="https://github.com/user-attachments/assets/35af9957-faa4-4df7-bb3a-faad3ca01f08" />
+After this I thought about what hardware to use and I also put every single piece of data into the sheets. This was extermely useful also while creating the Fusion model since I already had the width and height.
+<img width="600" height="808" alt="image" src="https://github.com/user-attachments/assets/383ac94b-f557-4a9e-8884-8416d82bfa0e" />
+<img width="596" height="428" alt="image" src="https://github.com/user-attachments/assets/a85864b8-e6b2-4e10-b287-d085b528dbae" />
+During the coding I also put down notes into
+ [arcademusicgameforgithub.pptx](https://github.com/user-attachments/files/29168822/arcademusicgameforgithub.pptx)
+
+ 
 # BOM
 |Name               |Description              |Links                                                                                                                                                                                                                                                                                                                                                                                                                   |Quantity|Cost |
 |-------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|-----|
