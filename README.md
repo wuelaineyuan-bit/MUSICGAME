@@ -19,6 +19,17 @@ The Meanwell power supply is connected to the power outlet. And it distrubutes t
 
 
 # CAD Assembly
+There are screw holes for the display to be mounted onto the case. The case has intentionally a hole in the back, so that the cables can reach the other components. To mount the display, you need long M4 screws. 
+
+<img width="318" height="467" alt="Bildschirmfoto 2026-06-21 um 01 16 15" src="https://github.com/user-attachments/assets/202582a5-4c8a-4695-a1e0-c93391dd5c58" />
+
+<img width="350" height="510" alt="Bildschirmfoto 2026-06-21 um 01 17 48" src="https://github.com/user-attachments/assets/0ef8c82b-f129-4b92-bc6a-b8e89a58db23" />
+
+The CAD model consists of two major parts. One being the main case and another backplate, that can be taken off. Inside you can place the power supply unit and the Pico 2. The backplate can be detached or assembled by pressed it into the main case or pulling it ou.
+
+<img width="501" height="472" alt="Bildschirmfoto 2026-06-21 um 01 24 55" src="https://github.com/user-attachments/assets/92256e42-3843-4415-ae0f-18c9367f627f" />
+
+<img width="412" height="454" alt="Bildschirmfoto 2026-06-21 um 01 27 50" src="https://github.com/user-attachments/assets/a0c2fa26-63df-4726-a252-89bd4eb0dcb3" />
 
 
 
