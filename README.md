@@ -13,6 +13,10 @@ The schematic is rather simple. The LED Matrix is powered by a Meanwell LRS-50-5
 # Firmware
 
 # Assembling and Wiring
+The Meanwell power supply is connected to the power outlet. And it distrubutes the power to the Pico 2 and the LED Matrix. The Pin connections can be seen below. The Pico2 is connected with the computer so that it can work.
+
+<img width="542" height="672" alt="Bildschirmfoto 2026-06-21 um 01 07 34" src="https://github.com/user-attachments/assets/9ab71074-dcb0-413a-8045-008bd93616ca" />
+
 
 # CAD Assembly
 
