@@ -6,7 +6,9 @@ The music game controller is supposed to be a portable version of the amazing ex
 # Motivation
 
 # Schematic
-The schematic is rather simple. The LED Matrix is powered by a Meanwell LRS-50-5, which delivers 5V and up to 10A, which is enough for the display. The Pico 2 can either be powered by the Meanwell or be connected to the computer. The only thing that is important is, that the computer needs to be connected to the Pico 2, to send over the data. If the meanwell is connected, the internal shottkey diode is closed and there can't be any power currents between the USB port and the microcontroller. So basically, the board can detect automatically which power supply it should use.
+The schematic is rather simple. The LED Matrix is powered by a Meanwell LRS-50-5, which delivers 5V and up to 10A, which is enough for the display. The Pico 2 can either be powered by the Meanwell or be connected to the computer. The only thing that is important is, that the computer needs to be connected to the Pico 2, to send over the data. However, it is also connected to the powersupply. For this reason, the Meannwell is connected to the VSYS pin of the Pico 2, with a shottkey diode in between. The Meanwell is connected to a power outlet with a cable.
+
+<img width="850" height="626" alt="Bildschirmfoto 2026-06-21 um 00 57 17" src="https://github.com/user-attachments/assets/6be7a021-3d61-4d1e-a4c6-50035f81d07c" />
 
 # Firmware
 
