@@ -19,7 +19,7 @@ The Meanwell power supply is connected to the power outlet. And it distrubutes t
 
 
 # CAD Assembly
-There are screw holes for the display to be mounted onto the case. The case has intentionally a hole in the back, so that the cables can reach the other components. To mount the display, you need long M4 screws. 
+There are screw holes for the display to be mounted onto the case. The case has intentionally a hole in the back, so that the cables can reach the other components. To mount the display, you need long M4 screws. As the arcade game is going to stand next to a wall, you won't see the holes anyway.
 
 <img width="318" height="467" alt="Bildschirmfoto 2026-06-21 um 01 16 15" src="https://github.com/user-attachments/assets/202582a5-4c8a-4695-a1e0-c93391dd5c58" />
 
