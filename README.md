@@ -50,14 +50,18 @@ This is a PowerPoint I made for myself to code my rhythm game. Since I am very i
 Inside the PowerPoint you can see that I started with the code and its components. For this I collected all the data from a very good youtube vide, explaining each component of a rhythm game, for example the metronome or the composer. 
 <img width="605" height="830" alt="image" src="https://github.com/user-attachments/assets/9d7b7d1d-5474-40ed-8f4b-eb891479f7ac" />
 <img width="613" height="800" alt="image" src="https://github.com/user-attachments/assets/35af9957-faa4-4df7-bb3a-faad3ca01f08" />
+
 After this I thought about what hardware to use and I also put every single piece of data into the sheets. This was extermely useful also while creating the Fusion model since I already had the width and height.
+
 <img width="600" height="808" alt="image" src="https://github.com/user-attachments/assets/383ac94b-f557-4a9e-8884-8416d82bfa0e" />
 <img width="596" height="428" alt="image" src="https://github.com/user-attachments/assets/a85864b8-e6b2-4e10-b287-d085b528dbae" />
 During the coding I also put down notes. It is a habit I have always had: I would take a screenshot of some free space anywhere on the desktop and then use the snippet tool to draw on it and sort my thoughts. I ended up with quite a bit of thoughts:
-<img width="719" height="823" alt="image" src="https://github.com/user-attachments/assets/5b2492dd-e878-4c5f-aad8-d2e81626217c" />
-![Uploading image.png…]()
 
- [arcademusicgameforgithub.pptx](https://github.com/user-attachments/files/29168822/arcademusicgameforgithub.pptx)
+<img width="719" height="823" alt="image" src="https://github.com/user-attachments/assets/5b2492dd-e878-4c5f-aad8-d2e81626217c" />
+
+
+
+[arcademusicgameforgithub.pptx](https://github.com/user-attachments/files/29168822/arcademusicgameforgithub.pptx)
 
  
 # BOM
