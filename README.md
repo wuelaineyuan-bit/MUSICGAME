@@ -1,4 +1,4 @@
-# MUSICGAME
+# ARCADE-MUSICGAME
  # Zine
  <img width="1304" height="1999" alt="zine" src="https://github.com/user-attachments/assets/5509923f-804e-4b2b-becf-110d14a703ea" />
 
