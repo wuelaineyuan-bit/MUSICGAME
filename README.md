@@ -3,9 +3,13 @@
 <img width="1304" height="1999" alt="zine png" src="https://github.com/user-attachments/assets/6ebfa892-7f9c-4048-9b82-7072d4d59bc7" />
 
 # Description
-The music game arcade is supposed to be a portable version of the amazing experience you get in a rhythm game arcade. You can play any music with it, since its BPM is adjustable, so everyone can play their favorite song on it-AT HOME!
-#Game Concept
+The music game arcade is supposed to be a portable version of the amazing experience you get in a rhythm game arcade. Combined with the Music-Game-Controller, you can play any music with it, since its BPM is adjustable, so everyone can play their favorite song on it-AT HOME!
 
+Musicgame-Controller: https://github.com/Gnoled5660/Musicgame-Controller
+#Game Concept
+The Game Concept is pretty simple. The LED Matrix as display shows two tiles (L and R) dropping down, similarly to Piano Tiles. Using the Musicgame-Controller, the player can press L, R or both at the same time in order to hit the notes. 
+You can adjust BPM and the amount of beats. The higher the BPM, the harder it will be to hit the notes at the right time. The higher the amount of beats, the longer the session will be. You could even double the amount of beats if you want to play your song on loop multiple times. You need to search up the BPM and find the beatamount for your song separately.
+There are four different feedbacks you can get: miss, good, great and perfect. In ascending order, they give you a higher score. The game outputs the percentage of right moves you did and also a score. Your goal is to hit the highest percentage/score. Have fun!
 # Motivation
 I have always loved going to music arcades. They are colorful, fun and beautiful. Most importantly, I love rhythm games. This is why I wanted to make a rhythm game with the display being an arcade controller. Originally, my idea was to use slippers as the buttons. However after my friend showed me a design, I immediately thought that the arcade controller would be alot cooler and more fitting to the theme.
 There is one problem. I live in Germany and there is not a single music game arcade that I can go to and have fun with my friends. Another problem that I found was that you cant particularly choose your music. You always have to hope for songs that you like to appear magically.
@@ -49,7 +53,10 @@ Inside the PowerPoint you can see that I started with the code and its component
 After this I thought about what hardware to use and I also put every single piece of data into the sheets. This was extermely useful also while creating the Fusion model since I already had the width and height.
 <img width="600" height="808" alt="image" src="https://github.com/user-attachments/assets/383ac94b-f557-4a9e-8884-8416d82bfa0e" />
 <img width="596" height="428" alt="image" src="https://github.com/user-attachments/assets/a85864b8-e6b2-4e10-b287-d085b528dbae" />
-During the coding I also put down notes into
+During the coding I also put down notes. It is a habit I have always had: I would take a screenshot of some free space anywhere on the desktop and then use the snippet tool to draw on it and sort my thoughts. I ended up with quite a bit of thoughts:
+<img width="719" height="823" alt="image" src="https://github.com/user-attachments/assets/5b2492dd-e878-4c5f-aad8-d2e81626217c" />
+![Uploading image.png…]()
+
  [arcademusicgameforgithub.pptx](https://github.com/user-attachments/files/29168822/arcademusicgameforgithub.pptx)
 
  
