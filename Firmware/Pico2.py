@@ -108,5 +108,5 @@ def selftest():
 selftest()
 while True:
     refresh()
-    oe.value(1)     # waehrend des seriellen Lesens dunkel schalten
+    oe.value(1)   
     drain()
