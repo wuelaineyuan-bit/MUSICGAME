@@ -25,8 +25,8 @@ class Serial {
 public:
     bool open(const string& port, int baud);
     void close();
-    int  readBytes(uint8_t* buf, int maxlen);   // 0 = nichts da, -1 = Fehler
-    int  writeBytes(const uint8_t* buf, int len);// best-effort, darf < len sein
+    int  readBytes(uint8_t* buf, int maxlen);   
+    int  writeBytes(const uint8_t* buf, int len);
     bool isOpen() const { return open_; }
 private:
     bool open_ = false;
@@ -61,7 +61,7 @@ bool Serial::open(const string& port, int baud) {
     cfsetospeed(&tio, spd);
     tio.c_cflag |= (CLOCAL | CREAD);
     tio.c_cflag &= ~CRTSCTS;
-    tio.c_cc[VMIN]  = 0;   // nicht-blockierendes Lesen
+    tio.c_cc[VMIN]  = 0;  
     tio.c_cc[VTIME] = 0;
     if (tcsetattr(fd_, TCSANOW, &tio) != 0) { perror("tcsetattr"); ::close(fd_); fd_ = -1; return false; }
     open_ = true;
@@ -80,9 +80,9 @@ int Serial::writeBytes(const uint8_t* buf, int len) {
     if (n < 0) { if (errno == EAGAIN || errno == EWOULDBLOCK) return 0; return -1; }
     return n;
 }
-#else  // ── Windows ──
+#else  
 bool Serial::open(const string& port, int baud) {
-    string full = "\\\\.\\" + port;                 // funktioniert auch fuer COM10+
+    string full = "\\\\.\\" + port;               
     h_ = CreateFileA(full.c_str(), GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
     if (h_ == INVALID_HANDLE_VALUE) { cerr << "open " << port << " failed\n"; return false; }
     DCB dcb{}; dcb.DCBlength = sizeof(dcb);
@@ -91,7 +91,7 @@ bool Serial::open(const string& port, int baud) {
     dcb.fBinary = TRUE; dcb.fDtrControl = DTR_CONTROL_ENABLE; dcb.fRtsControl = RTS_CONTROL_ENABLE;
     SetCommState(h_, &dcb);
     COMMTIMEOUTS to{};
-    to.ReadIntervalTimeout = MAXDWORD;              // sofort zurueck (nicht blockieren)
+    to.ReadIntervalTimeout = MAXDWORD;            
     to.ReadTotalTimeoutConstant = 0; to.ReadTotalTimeoutMultiplier = 0;
     to.WriteTotalTimeoutConstant = 50; to.WriteTotalTimeoutMultiplier = 0;
     SetCommTimeouts(h_, &to);
@@ -108,7 +108,6 @@ int Serial::writeBytes(const uint8_t* buf, int len) {
 }
 #endif
 
-// ─── Globaler Spielzustand (wie im Original) ─────────────────────────────────
 string cstart      = "a";
 int    beatamount  = 0;
 int    bpm         = 1;
@@ -132,7 +131,6 @@ auto leftlastInputTime  = steady_clock::now();
 auto rightlastInputTime = steady_clock::now();
 auto lastBeatTime       = steady_clock::now();
 
-// ─── 64x32 Framebuffer (8 Farben: bit0=R, bit1=G, bit2=B) ────────────────────
 static const int MW = 64, MH = 32;
 static uint8_t fb[MH * MW];
 
@@ -150,8 +148,6 @@ inline void fillRect(int x, int y, int w, int h, uint8_t c) {
 }
 inline void clearFB() { memset(fb, 0, sizeof(fb)); }
 
-// ─── Frame-Protokoll PC -> Matrix-Pico ───────────────────────────────────────
-//   4 Magic-Bytes  DE AD BE EF  +  2048 Bytes Payload (1 Byte je Pixel, y*64+x)
 static const uint8_t MAGIC[4] = { 0xDE, 0xAD, 0xBE, 0xEF };
 
 void sendFrame(Serial& s) {
@@ -159,17 +155,15 @@ void sendFrame(Serial& s) {
     static uint8_t packet[4 + MH * MW];
     memcpy(packet, MAGIC, 4);
     memcpy(packet + 4, fb, MH * MW);
-    // Best-effort: wenn der USB-Puffer voll ist, lassen wir den Frame fallen.
-    // Wichtig, damit das Timing des Spiels NIE durch die Anzeige blockiert wird.
+
     s.writeBytes(packet, sizeof(packet));
 }
 
-// ─── Visuelle Darstellung ────────────────────────────────────────────────────
-static const int    JUDGE_Y         = 26;    // Trefferlinie
+static const int    JUDGE_Y         = 26;  
 static const int    NOTE_H          = 3;
-static const double LOOKAHEAD_BEATS = 4.0;   // so viele Beats im Voraus sichtbar
-static const int    L_X = 4,  L_W = 24;      // linke Spur
-static const int    R_X = 36, R_W = 24;      // rechte Spur
+static const double LOOKAHEAD_BEATS = 4.0;   
+static const int    L_X = 4,  L_W = 24;      
+static const int    R_X = 36, R_W = 24;      
 
 struct Flash { long long t0 = -1; int lanes = 0; uint8_t color = 0; };
 Flash flash;
@@ -182,10 +176,8 @@ void renderFrame(long long ms, int beatDMs) {
     clearFB();
     double pxPerBeat = (double)JUDGE_Y / LOOKAHEAD_BEATS;
 
-    // Trefferlinie
     fillRect(0, JUDGE_Y, MW, 1, C_BLUE);
 
-    // Anrollende Noten
     for (int i = 0; i < beatamount; i++) {
         int note = jubeatmap[i];
         if (note == 0) continue;                                  // Pause = keine Note
@@ -197,18 +189,13 @@ void renderFrame(long long ms, int beatDMs) {
         if (note == 2 || note == 3) fillRect(R_X, yy, R_W, NOTE_H, C_MAG);
     }
 
-    // Bewertungs-Blitz an der Trefferlinie
     if (flash.t0 >= 0 && ms - flash.t0 < 130) {
         if (flash.lanes & 1) fillRect(L_X, JUDGE_Y - 3, L_W, 6, flash.color);
         if (flash.lanes & 2) fillRect(R_X, JUDGE_Y - 3, R_W, 6, flash.color);
     }
 }
 
-// ─── Controller-Eingabe (Serielle Tokens -> diskrete Tastendruecke) ──────────
-//  main.py sendet waehrend des Haltens ~alle 50 ms denselben Token und KEIN
-//  Release-Event. Wir wandeln den Wiederhol-Strom per Debounce in einzelne
-//  "Edge"-Druecke um: ein Token zaehlt nur als neuer Druck, wenn er laenger als
-//  DEBOUNCE_MS nicht gesehen wurde.
+
 struct CtrlIn {
     Serial* s = nullptr;
     string  line;
@@ -229,7 +216,7 @@ struct CtrlIn {
             } else if (line.size() < 31) {
                 line.push_back(c);
             } else {
-                line.clear();   // ueberlange Zeile verwerfen (Resync)
+                line.clear();  
             }
         }
     }
@@ -241,12 +228,10 @@ struct CtrlIn {
             if (nowMs - lastRightMs > DEBOUNCE_MS) rightEdge = true;
             lastRightMs = nowMs;
         }
-        // "UP" / "DOWN" werden hier ignoriert (z.B. fuer ein Menue nutzbar)
     }
 };
 CtrlIn ctrl;
 
-// ─── getStats ────────────────────────────────────────────────────────────────
 void getStats() {
     cout << "beatamount:" << endl;
     cin  >> beatamount;
@@ -258,7 +243,6 @@ void getStats() {
     cout << lastBar << endl;
 }
 
-// ─── composer ────────────────────────────────────────────────────────────────
 void composer() {
     srand((unsigned)time(0));
     jubeatmap.clear(); lkeyinput.clear(); rkeyinput.clear(); accuracy.clear();
@@ -272,7 +256,6 @@ void composer() {
     accuracy .resize(beatamount, 0);
 }
 
-// ─── metronome (Logik wie Original, Eingabe per Serial, Bild an Matrix) ──────
 void metronome(Serial& matrix) {
     const int beatDMs       = 60000 / bpm;
     const long long perfectWindow = 15, greatWindow = 30, goodWindow = 50, hitWindow = 100;
@@ -288,7 +271,6 @@ void metronome(Serial& matrix) {
 
         ctrl.pump(ms);
 
-        // ── Naechsten Beat ausloesen ───────────────────────────────────────
         if (lastBeat < beatamount && ms >= (long long)lastBeat * beatDMs) {
             lastBar++;
             lastBeatTime  = now;
@@ -304,7 +286,6 @@ void metronome(Serial& matrix) {
             lastBeat++;
         }
 
-        // ── Aktives Beat-Fenster: Eingabe latchen + bewerten ───────────────
         if (activeBeat >= 0 && activeBeat < beatamount && !beatJudged) {
             int noteType            = jubeatmap[activeBeat];
             long long beatTargetMs  = (long long)activeBeat * beatDMs;
@@ -399,8 +380,7 @@ void metronome(Serial& matrix) {
         if (lastBeat >= beatamount && beatJudged) break;
         this_thread::sleep_for(milliseconds(1));
     }
-
-    // Schlussbild noch einmal senden
+  
     long long endMs = duration_cast<milliseconds>(steady_clock::now() - start).count();
     renderFrame(endMs, beatDMs);
     sendFrame(matrix);
