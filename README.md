@@ -1,5 +1,7 @@
 # MUSICGAME
  # Zine
+ <img width="1304" height="1999" alt="zine" src="https://github.com/user-attachments/assets/5509923f-804e-4b2b-becf-110d14a703ea" />
+
 
 # Description
 The music game arcade is supposed to be a portable version of the amazing experience you get in a rhythm game arcade. Combined with the Music-Game-Controller, you can play any music with it, since its BPM is adjustable, so everyone can play their favorite song on it-AT HOME!
