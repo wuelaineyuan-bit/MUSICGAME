@@ -7,7 +7,7 @@ The music game arcade is supposed to be a portable version of the amazing experi
 
 Musicgame-Controller: https://github.com/Gnoled5660/Musicgame-Controller
 #Game Concept
-The Game Concept is pretty simple. The LED Matrix as display shows two tiles (L and R) dropping down, similarly to Piano Tiles. Using the Musicgame-Controller, the player can press L, R or both at the same time in order to hit the notes. 
+Since this is my first hardware project ever, I wanted the concept to be as simple as possible, I do have some software experience though. The LED Matrix as display shows two tiles (L and R) dropping down, similarly to Piano Tiles. Using the Musicgame-Controller, the player can press L, R or both at the same time in order to hit the notes. 
 You can adjust BPM and the amount of beats. The higher the BPM, the harder it will be to hit the notes at the right time. The higher the amount of beats, the longer the session will be. You could even double the amount of beats if you want to play your song on loop multiple times. You need to search up the BPM and find the beatamount for your song separately.
 There are four different feedbacks you can get: miss, good, great and perfect. In ascending order, they give you a higher score. The game outputs the percentage of right moves you did and also a score. Your goal is to hit the highest percentage/score. Have fun!
 # Motivation
