@@ -23,6 +23,9 @@ The schematic is rather simple. The LED Matrix is powered by a Meanwell LRS-50-5
 <img width="850" height="626" alt="Bildschirmfoto 2026-06-21 um 00 57 17" src="https://github.com/user-attachments/assets/6be7a021-3d61-4d1e-a4c6-50035f81d07c" />
 
 # Firmware
+The Firmware was first written as normal computer program in c++, with the intention of implementing it into hardware later on. So before that, the Windows library-included command GetAsyncKeyState was used to sense input. The software itself counts the beats using the included chrono library in c++.
+The software itself uses the amount of beats(beatamount), the beats per minute(bpm) and the count of the last beat (lastBeat) for the metronome/time-counting system to work and four vectors are used for the rhythm game judging system to work. 
+The time-counting system works through a loop that will only run while the actual number of beats in the system is smaller than beatamount. A timestamp is also made at the start(start) of the program. This timestamp(start) is constantly getting compared to the timestamp that is created newly everytime the loop starts a new time (new). These two timestamps are used to create a duration called ms (now-start). Ms is getting compared to lastBeat as well as the amount of ms that elapse per beat (beatDMs). This procedure enables a timing system.
 
 # Assembling and Wiring
 The Meanwell power supply is connected to the power outlet. And it distrubutes the power to the Pico 2 and the LED Matrix. The Pin connections can be seen below. The Pico2 is connected with the computer so that it can work.
