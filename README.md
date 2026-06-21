@@ -42,6 +42,9 @@ The CAD model consists of two major parts. One being the main case and another b
 
 <img width="412" height="454" alt="Bildschirmfoto 2026-06-21 um 01 27 50" src="https://github.com/user-attachments/assets/a0c2fa26-63df-4726-a252-89bd4eb0dcb3" />
 
+This is the final finished model:
+<img width="1130" height="898" alt="image" src="https://github.com/user-attachments/assets/6a2680a2-5349-433c-9662-1e8ab6a87967" />
+<img width="886" height="972" alt="image" src="https://github.com/user-attachments/assets/764c343c-a87c-4052-86b3-849d845081b4" />
 
 
 # Planning PowerPoint
