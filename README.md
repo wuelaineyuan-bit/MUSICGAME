@@ -7,6 +7,7 @@
 The music game arcade is a portable version of the amazing experience you get in a rhythm game arcade. Combined with the Music-Game-Controller, you can play any music with it, since its BPM is adjustable, so everyone can play their favorite song on it-AT HOME!
 
 The controller itself was designed seperately in another sub project.
+
 Musicgame-Controller: https://github.com/Gnoled5660/Musicgame-Controller
 # Game Concept
 Since this is my first hardware project ever, I wanted the concept to be as simple as possible, I do have quite some of software experience though. The LED Matrix as display shows two tiles (L and R) dropping down, similarly to Piano Tiles. Using the Musicgame-Controller, the player can press L, R or both at the same time in order to hit the notes. 
