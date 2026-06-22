@@ -4,7 +4,7 @@
 
 
 # Description
-The music game arcade is supposed to be a portable version of the amazing experience you get in a rhythm game arcade. Combined with the Music-Game-Controller, you can play any music with it, since its BPM is adjustable, so everyone can play their favorite song on it-AT HOME!
+The music game arcade is a portable version of the amazing experience you get in a rhythm game arcade. Combined with the Music-Game-Controller, you can play any music with it, since its BPM is adjustable, so everyone can play their favorite song on it-AT HOME!
 
 Musicgame-Controller: https://github.com/Gnoled5660/Musicgame-Controller
 # Game Concept
@@ -25,10 +25,16 @@ The schematic is rather simple. The LED Matrix is powered by a Meanwell LRS-50-5
 # Firmware
 The Firmware was first written as normal computer program in c++, with the intention of implementing it into hardware later on. So before that, the Windows library-included command GetAsyncKeyState was used to sense input. The software itself counts the beats using the included chrono library in c++.
 The software itself uses the amount of beats(beatamount), the beats per minute(bpm) and the count of the last beat (lastBeat) for the metronome/time-counting system to work and four vectors are used for the rhythm game judging system to work. 
+
 The time-counting system works through a loop that will only run while the actual number of beats in the system is smaller than beatamount. A timestamp is also made at the start(start) of the program. This timestamp(start) is constantly getting compared to the timestamp that is created newly everytime the loop starts a new time (new). These two timestamps are used to create a duration called ms (now-start). Ms is getting compared to lastBeat as well as the amount of ms that elapse per beat (beatDMs). This procedure enables a timing system.
+The judging system consists of four vectors: jubeatmap, rkeyinput, lkeyinput and accuracy. jubeatmap generates a vector that is as long as the amount of beats with randomly generated numbers from 0-3. 0 representing no beads, 1 representing one left bead, 2 representing one right bead and 3 both at the same time. These beads get rendered and sent to the matrix. r and l keyinput track the players input and after compared to jubeatmap, both get an output to the accuracy vector and output okayer feedback and also a score.
+
+To represent this visually, I programmed the the Matrix which should be connected to the Raspberry Pi Pico. To do that I used GP2-GP7 of the Pico for the RGB of the Matrix and GP8-GP11 for ABCD, GP12-14 for CLK, LAT and OE. The PC sends DE, AD, BE and EF at the speed of +2048 per frame with one byte, eight colors and thr order being y*64+y. The judging line was at 26, The left "racing line" at 4 and the right at 36, both at 24. I wanted there to be 4 beads to be visible at the same time. 
+
+The input comes from the seperate Musicgame-Controller(linked in description). I mapped the tokens from main.py. Before, I programmed with GetAsyncKeystate LEFT and RIGHT. I replaced them with BUTTON1 and BUTTON2. However a similar problem could occur, similar to what I have encountered with my key: so the debouncing was already fixed pretty much with a 120ms debounce. The brightness can be adjusted with BRIGHT_US, which can be different dependint on individual needs.
 
 # Assembling and Wiring
-The Meanwell power supply is connected to the power outlet. And it distrubutes the power to the Pico 2 and the LED Matrix. The Pin connections can be seen below. The Pico2 is connected with the computer so that it can work.
+The Meanwell power supply is connected to the power outlet. And it distrubutes the power to the Pico 2 and the LED Matrix. The Pin connections can be seen below. The Pico2 is connected with the computer so that it can work.  The GP2-GP7 of the Pico should be connected to the RGB of the Matrix and GP8-GP11 for ABCD, GP12-14 for CLK, LAT and OE, as shown. You will need a 5V power supply for the matrix in order for the LEDs to work.
 
 <img width="542" height="672" alt="Bildschirmfoto 2026-06-21 um 01 07 34" src="https://github.com/user-attachments/assets/9ab71074-dcb0-413a-8045-008bd93616ca" />
 
