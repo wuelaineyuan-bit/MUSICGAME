@@ -35,6 +35,8 @@ To represent this visually, I programmed the the Matrix which should be connecte
 
 The input comes from the seperate Musicgame-Controller(linked in description). I mapped the tokens from main.py. Before, I programmed with GetAsyncKeystate LEFT and RIGHT. I replaced them with BUTTON1 and BUTTON2. However a similar problem could occur, similar to what I have encountered with my key: so the debouncing was already fixed pretty much with a 120ms debounce. The brightness can be adjusted with BRIGHT_US, which can be different dependint on individual needs.
 
+To run the program, simply enter BPM and amount of beats. And the game should start. 
+
 # Assembling and Wiring
 The Meanwell power supply is connected to the power outlet. And it distrubutes the power to the Pico 2 and the LED Matrix. The Pin connections can be seen below. The Pico2 is connected with the computer so that it can work.  The GP2-GP7 of the Pico should be connected to the RGB of the Matrix and GP8-GP11 for ABCD, GP12-14 for CLK, LAT and OE, as shown. You will need a 5V power supply for the matrix in order for the LEDs to work.
 
