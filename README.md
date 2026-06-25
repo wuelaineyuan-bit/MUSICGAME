@@ -51,11 +51,12 @@ There are screw holes for the display to be mounted onto the case. The case has 
 <img width="356" height="601" alt="Bildschirmfoto 2026-06-25 um 02 01 26" src="https://github.com/user-attachments/assets/eb4dbc0b-94a7-4a84-b6cf-06c901437ece" />
 
 
-The CAD model consists of two major parts. One being the main case and another backplate, that can be taken off. Inside you can place the power supply unit and the Pico 2. The backplate can be detached or assembled by pressed it into the main case or pulling it out.
+The CAD model consists of two major parts. One being the main case and another backplate, that can be taken off. Inside you can place the power supply unit and the Pico 2. The backplate can be detached or assembled by screwing screws into the main case or descrewing it out.
 
-<img width="501" height="472" alt="Bildschirmfoto 2026-06-21 um 01 24 55" src="https://github.com/user-attachments/assets/92256e42-3843-4415-ae0f-18c9367f627f" />
+<img width="495" height="484" alt="Bildschirmfoto 2026-06-25 um 02 03 57" src="https://github.com/user-attachments/assets/b38d0482-3dd4-4a2b-9ca6-4e56a41c7840" />
 
-<img width="412" height="454" alt="Bildschirmfoto 2026-06-21 um 01 27 50" src="https://github.com/user-attachments/assets/a0c2fa26-63df-4726-a252-89bd4eb0dcb3" />
+<img width="420" height="458" alt="Bildschirmfoto 2026-06-25 um 02 03 09" src="https://github.com/user-attachments/assets/5deb27cd-7d5a-462a-80f8-7a44fbeaee56" />
+
 
 This is the final finished model:
 <img width="1130" height="898" alt="image" src="https://github.com/user-attachments/assets/6a2680a2-5349-433c-9662-1e8ab6a87967" />
