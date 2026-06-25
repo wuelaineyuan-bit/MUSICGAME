@@ -48,7 +48,8 @@ There are screw holes for the display to be mounted onto the case. The case has 
 
 <img width="318" height="467" alt="Bildschirmfoto 2026-06-21 um 01 16 15" src="https://github.com/user-attachments/assets/202582a5-4c8a-4695-a1e0-c93391dd5c58" />
 
-<img width="350" height="510" alt="Bildschirmfoto 2026-06-21 um 01 17 48" src="https://github.com/user-attachments/assets/0ef8c82b-f129-4b92-bc6a-b8e89a58db23" />
+<img width="356" height="601" alt="Bildschirmfoto 2026-06-25 um 02 01 26" src="https://github.com/user-attachments/assets/eb4dbc0b-94a7-4a84-b6cf-06c901437ece" />
+
 
 The CAD model consists of two major parts. One being the main case and another backplate, that can be taken off. Inside you can place the power supply unit and the Pico 2. The backplate can be detached or assembled by pressed it into the main case or pulling it out.
 
